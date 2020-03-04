@@ -14,5 +14,5 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckod
     chmod 755 /usr/local/bin/geckodriver && \
     pip3 install selenium
 
-RUN pip3 install boto3 && \
+RUN pip3 install awscli boto3 && \
     git clone https://github.com/aokad/igvjs_auto_capture.git

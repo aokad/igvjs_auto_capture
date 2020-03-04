@@ -119,7 +119,7 @@ def main():
     parser.add_argument("--img_width", metavar = "1600", help = "width(px) for image file", type = int, default = 1600)
     parser.add_argument("--track_height", metavar = "1200", help = "height(px) for igv.js drowing read track.", type = int, default = 1200)
     parser.add_argument("--read_width", metavar = "300", help = "capture range(bps). If setting width=300, capture size = 601bps. (300(left) + 1(center) + 300(right))", type = int, default = 300)
-    parser.add_argument("--wait_time", metavar = "/path/to/file.bam", help = "aws s3 path to bam file (without bucket-name)", type = int, default = 30)
+    parser.add_argument("--wait_time", metavar = "30", help = "aws s3 path to bam file (without bucket-name)", type = int, default = 30)
     
     argv = sys.argv[1:]
     if len(argv) < 1:
