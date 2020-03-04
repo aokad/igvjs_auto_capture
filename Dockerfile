@@ -1,8 +1,9 @@
 FROM ubuntu:18.04
 MAINTAINER aokad <aokada@ncc.go.jp>
 
+WORKDIR /work
 RUN apt-get update -y && \
-    apt-get install -y xvfb firefox wget python3-pip && \
+    apt-get install -y xvfb firefox wget python3-pip git && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
@@ -12,3 +13,6 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckod
     mv geckodriver /usr/local/bin/ && \
     chmod 755 /usr/local/bin/geckodriver && \
     pip3 install selenium
+
+RUN pip3 install boto3 && \
+    git clone https://github.com/aokad/igvjs_auto_capture.git

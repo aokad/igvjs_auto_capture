@@ -7,9 +7,11 @@ Created on Fri Feb 28 16:15:42 2020
 @version: 20200228.1617
 """
 
-IGVJS_PATH="/home/ubuntu/environment/igv.js"
-
 import os
+
+CURRENT = os.path.dirname(os.path.abspath(__file__))
+IGVJS_PATH = CURRENT + "/igv.js"
+TEMPLATE_PATH = CURRENT + "/template.html"
 
 def create_presigned_url(bucket_name, object_name, expiration=3600):
     import boto3
@@ -50,7 +52,7 @@ def write_html(url, indexURL, output_html, args):
     if start < 1:
         start = 1
         
-    template = open("./template.html").read()
+    template = open(TEMPLATE_PATH).read()
     data = template.format(
         genome = args.genome,
         chrom = args.chrom,

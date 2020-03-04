@@ -1,6 +1,6 @@
 #export PATH=$HOME/environment:$PATH
 
-python3 headless.py \
+python3 /work/igvjs_auto_capture/headless.py \
 --bucket sra-virginia \
 --url analysis/DRP001919/DRR016715/irav/DRR016715.iravnet.filt.bam \
 --index_url analysis/DRP001919/DRR016715/irav/DRR016715.iravnet.filt.bai \
