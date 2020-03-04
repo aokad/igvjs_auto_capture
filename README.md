@@ -1,0 +1,1 @@
+# igvjs_auto_capture
