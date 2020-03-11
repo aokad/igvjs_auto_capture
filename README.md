@@ -30,7 +30,7 @@ AWS S3バケットにおいてあるbamに対してpresignを発行した後、i
 2. docker イメージの取得とAWSアカウントの設定
 
 ```
-$ docker pull igvjs_auto_capture
+$ docker pull aokad/igvjs_auto_capture
 $ docker run -it --memory 1024mb --shm-size 2g igvjs_auto_capture bash
 # (コンテナ内) aws configure
 ...
