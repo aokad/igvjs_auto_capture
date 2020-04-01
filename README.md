@@ -38,15 +38,19 @@ $ docker run -it --memory 1024mb --shm-size 2g aokad/igvjs_auto_capture bash
 
 ## How to use
 
-run.sh を編集して使う
-
+（コンテナ内で実行）  
+コンテナにおいてある run.sh を編集して実行する  
+/work/igvjs_auto_capture/run.sh
 ```
 python3 /work/igvjs_auto_capture/headless.py \
 --bucket sra-virginia \
---url analysis/DRP001919/DRR016715/irav/DRR016715.iravnet.filt.bam \
---index_url analysis/DRP001919/DRR016715/irav/DRR016715.iravnet.filt.bam.bai \
+--url path/to/bam/file.bam \
+--index_url path/to/bam/file.bam.bai \
 --genome hg38 \
 --chrom chr3 \
 --pos 49699104 \
---output ./capture/RNF123_chr3_49699104_DRP001919_DRR016715.png
+--output ./capture.png
 ```
+
+※ `--url`, `--index_url` は `s3://bucket-name/` 不要  
+`s3://bucket-name/dir/file.bam` の場合、`dir/file.bam` を入力する
