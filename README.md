@@ -12,19 +12,26 @@ AWS S3バケットにおいてあるbamに対してpresignを発行した後、i
 1. AWS S3バケットに対し、CORを設定
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-<CORSRule>
-    <AllowedOrigin>*</AllowedOrigin>
-    <AllowedMethod>GET</AllowedMethod>
-    <AllowedMethod>HEAD</AllowedMethod>
-    <MaxAgeSeconds>3000</MaxAgeSeconds>
-    <ExposeHeader>Content-Length</ExposeHeader>
-    <ExposeHeader>Content-Type</ExposeHeader>
-    <ExposeHeader>Content-Range</ExposeHeader>
-    <AllowedHeader>*</AllowedHeader>
-</CORSRule>
-</CORSConfiguration>
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "HEAD"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": [
+            "Content-Length",
+            "Content-Type",
+            "Content-Range"
+        ],
+        "MaxAgeSeconds": 3000
+    }
+]
 ```
 
 2. docker イメージの取得とAWSアカウントの設定
